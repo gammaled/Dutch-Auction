@@ -21,7 +21,7 @@
 * [Solidity](https://docs.soliditylang.org/en/v0.8.11/): language used to write smart contracts
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): l.anguage used to write scripts that deploy and interact with smart contract after it is deployed
 * [Node.js](https://nodejs.org/en/docs/): used for installing and managing packages.
-* [Truffle](https://trufflesuite.com/): a smart contract development framework.
+* [Truffle](https://github.com/trufflesuite): a smart contract development framework.
 * [Mocha](https://mochajs.org/): a JavaScript unit testing framework.
 * [Ganache](https://github.com/trufflesuite/ganache): a tool for creating a local blockchain for fast Ethereum development.
 
