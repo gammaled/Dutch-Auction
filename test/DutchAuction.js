@@ -23,7 +23,7 @@ contract("DutchAuction", (accounts) => {
             // TODO: Test if msg.sender == the address that initialised contract
         })
     })
-    context("has a bid function that", async () => {
+    context("has a function bid() that", async () => {
         it("should only work if there has been no bid made", async () => {
             //TODO: Test that the value of bidder variable is a address(0) (zero address)
         })
