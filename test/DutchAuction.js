@@ -1,9 +1,15 @@
+// Importing the DutchAuction contract for testing
 const DutchAuction = artifacts.require("DutchAuction");
+
+// Importing helper function to test fetching a promise 
 const utils = require("./helpers/utils");
+
+// Testing smart contract
 contract("DutchAuction", (accounts) => {
     let [seller, bidder] = accounts;
     let contractInstance;
     beforeEach(async () => {
+        // Creating new contract instance before every individual test
         contractInstance = await DutchAuction.new();
     });
     context("when initialised", async () => {
