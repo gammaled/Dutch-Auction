@@ -1,0 +1,1 @@
+const DutchAuction = artifacts.require("DutchAuction");
