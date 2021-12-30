@@ -10,7 +10,7 @@ contract("DutchAuction", (accounts) => {
         it("should return error if startPrice is not greater than reservePrice", async () => {
             // TODO: Test if startPrice > reservePrice
         })
-        it("should have the endTime variable greater than startTime variable", async () => {
+        it("should return error if endTime is not greater than startTime", async () => {
             // TODO: Test endTime > startTime
         })
         it("should have the owner as the address that initialised it", async () => {
