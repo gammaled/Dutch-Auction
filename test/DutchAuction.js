@@ -21,10 +21,10 @@ contract("DutchAuction", (accounts) => {
         it("should only work if there has been no bid made", async () => {
             //TODO: Test that the value of bidder variable is a address(0) (zero address)
         })
-        it("should only be called when the caller (bidder) has the startPrice in their wallet", async () => {
+        it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
         })
-        it("should have currentPrice is equal to greater than startPrice", async () => {
+        it("should have a currentPrice is equal to or less than startPrice", async () => {
             //TODO: Test that ownership transfer to msg.sender(bidder) works
         })
     })
