@@ -7,7 +7,7 @@ contract("DutchAuction", (accounts) => {
         contractInstance = await DutchAuction.new();
     });
     context("when initialised", async () => {
-        it("should have the startPrice variable not be equal to or lower than reservePrice variable", async () => {
+        it("should return error if startPrice is not greater than reservePrice", async () => {
             // TODO: Test if startPrice > reservePrice
         })
         it("should have the endTime variable greater than startTime variable", async () => {
