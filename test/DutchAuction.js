@@ -1,4 +1,5 @@
 const DutchAuction = artifacts.require("DutchAuction");
+const utils = require("./helpers/utils");
 contract("DutchAuction", (accounts) => {
     let [seller, bidder] = accounts;
     let contractInstance;
