@@ -17,4 +17,15 @@ contract("DutchAuction", (accounts) => {
             // TODO: Test if msg.sender == the address that initialised contract
         })
     })
+    context("has a bid function that", async () => {
+        it("should only work if there has been no bid made", async () => {
+            //TODO: Test that the value of bidder variable is a address(0) (zero address)
+        })
+        it("should only be called when the caller (bidder) has the startPrice in their wallet", async () => {
+            //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
+        })
+        it("should have currentPrice is equal to greater than startPrice", async () => {
+            //TODO: Test that ownership transfer to msg.sender(bidder) works
+        })
+    })
 })
