@@ -6,9 +6,9 @@ const utils = require("./helpers/utils");
 
 // Testing smart contract
 contract("DutchAuction", (accounts) => {
+    let contractInstance;
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
-    let contractInstance;
     let asset;
     let tokenId;
     let startPrice;
