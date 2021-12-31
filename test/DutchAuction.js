@@ -6,8 +6,16 @@ const utils = require("./helpers/utils");
 
 // Testing smart contract
 contract("DutchAuction", (accounts) => {
+    // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
     let contractInstance;
+    let asset;
+    let tokenId;
+    let startPrice;
+    let reservePrice;
+    let endTime;
+    // Variable defined when constructor is called
+    let startTime;
     beforeEach(async () => {
         // Creating new contract instance before every individual test
         contractInstance = await DutchAuction.new();
