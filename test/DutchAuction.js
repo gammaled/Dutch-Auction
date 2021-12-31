@@ -23,6 +23,7 @@ contract("DutchAuction", (accounts) => {
     });
     context("constructor", async () => {
         it("should have the owner as the address that initialised it", async () => {
+            // TODO: Check why test emits "OwnershipTransfer" event
             let result = await contractInstance.owner();
             expect(result).to.equal(seller);
         })
