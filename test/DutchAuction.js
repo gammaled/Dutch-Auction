@@ -27,7 +27,11 @@ contract("DutchAuction", (accounts) => {
             expect(result).to.equal(seller);
         })
         it("should define startTime variable with the value of the timestamp of contract deployment", async () => {
-            // TODO: Test if value of startTime == block.timestamp
+            // TODO: Fix logic to check if (NOW <= blockTime <= NOW + 15 sec)
+            console.log(Date.now());
+            let blockTime = await contractInstance.startTime;
+            let blockTimeRange = Date.now()
+            expect(blockTime).to.equal(Date.now());
         })
         it("should return error if startPrice is not greater than reservePrice", async () => {
             // TODO: Test if startPrice > reservePrice
