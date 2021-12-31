@@ -1,6 +1,7 @@
 // Importing the DutchAuction contract for testing
 const DutchAuction = artifacts.require("DutchAuction");
 
+const { expect } = require("chai");
 // Importing helper function to test fetching a promise 
 const utils = require("./helpers/utils");
 
@@ -22,7 +23,8 @@ contract("DutchAuction", (accounts) => {
     });
     context("constructor", async () => {
         it("should have the owner as the address that initialised it", async () => {
-            // TODO: Test if msg.sender == the address that initialised contract
+            let result = await contractInstance.owner();
+            expect(result).to.equal(seller);
         })
         it("should define startTime variable with the value of the timestamp of contract deployment", async () => {
             // TODO: Test if value of startTime == block.timestamp
