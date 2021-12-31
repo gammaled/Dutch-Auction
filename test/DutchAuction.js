@@ -21,14 +21,14 @@ contract("DutchAuction", (accounts) => {
         contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("constructor", async () => {
+        it("should have the owner as the address that initialised it", async () => {
+            // TODO: Test if msg.sender == the address that initialised contract
+        })
         it("should return error if startPrice is not greater than reservePrice", async () => {
             // TODO: Test if startPrice > reservePrice
         })
         it("should return error if endTime is not greater than startTime", async () => {
             // TODO: Test endTime > startTime
-        })
-        it("should have the owner as the address that initialised it", async () => {
-            // TODO: Test if msg.sender == the address that initialised contract
         })
     })
     context("has a function bid() that", async () => {
