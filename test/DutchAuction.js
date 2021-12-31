@@ -18,7 +18,7 @@ contract("DutchAuction", (accounts) => {
     let startTime;
     beforeEach(async () => {
         // Creating new contract instance before every individual test
-        contractInstance = await DutchAuction.new();
+        contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("constructor", async () => {
         it("should return error if startPrice is not greater than reservePrice", async () => {
