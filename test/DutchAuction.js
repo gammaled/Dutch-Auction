@@ -24,6 +24,9 @@ contract("DutchAuction", (accounts) => {
         it("should have the owner as the address that initialised it", async () => {
             // TODO: Test if msg.sender == the address that initialised contract
         })
+        it("startTime variable is defined with the value of the time of contract deployment (start of auction)", async () => {
+            // TODO: Test if value of startTime == block.timestamp
+        })
         it("should return error if startPrice is not greater than reservePrice", async () => {
             // TODO: Test if startPrice > reservePrice
         })
