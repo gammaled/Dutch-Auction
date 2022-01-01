@@ -21,7 +21,7 @@ contract("DutchAuction", (accounts) => {
         // Creating new contract instance before every individual test
         contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
-    context("constructor", async () => {
+    context("DutchAuction constructor", async () => {
         xit("should have the owner as the address that initialised it", async () => {
             let result = await contractInstance.owner();
             expect(result).to.equal(contractInstance.seller());
@@ -40,7 +40,7 @@ contract("DutchAuction", (accounts) => {
             // TODO: Test endTime > startTime
         })
     })
-    xcontext("has a function bid() that", async () => {
+    xcontext("bid() function", async () => {
         it("should only work if there has been no bid made", async () => {
             //TODO: Test that the value of bidder variable is a address(0) (zero address)
         })
