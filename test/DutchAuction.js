@@ -51,5 +51,8 @@ contract("DutchAuction", (accounts) => {
         it("should have a currentPrice is equal to or less than startPrice", async () => {
             //TODO: Test that ownership transfer to msg.sender(bidder) works
         })
+        it("should transfer ownership from seller to bidder", async () => {
+            //TODO: Test that bidder is new owner
+        })
     })
 })
