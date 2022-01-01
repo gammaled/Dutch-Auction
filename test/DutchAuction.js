@@ -23,7 +23,6 @@ contract("DutchAuction", (accounts) => {
     });
     context("constructor", async () => {
         xit("should have the owner as the address that initialised it", async () => {
-            // TODO: Check why it passes without being implemented in smart contract
             let result = await contractInstance.owner();
             expect(result).to.equal(contractInstance.seller());
         })
