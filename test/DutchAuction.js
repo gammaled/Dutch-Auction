@@ -28,9 +28,9 @@ contract("DutchAuction", (accounts) => {
         })
         it("should define startTime variable with the value of the timestamp of contract deployment", async () => {
             // TODO: Fix logic to check if (NOW <= blockTime <= NOW + 15 sec)
-            console.log(Date.now());
-            let blockTime = await contractInstance.startTime;
-            let blockTimeRange = Date.now()
+            let blockTime = await contractInstance.startTime();
+            let blockTimeRange = Date.now();
+            console.log(Date.now(), blockTime);
             expect(blockTime).to.equal(Date.now());
         })
         xit("should return error if startPrice is not greater than reservePrice", async () => {
