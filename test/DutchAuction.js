@@ -26,7 +26,7 @@ contract("DutchAuction", (accounts) => {
             let result = await contractInstance.owner();
             expect(result).to.equal(contractInstance.seller());
         })
-        it("should define startTime variable with the value of the timestamp of contract deployment", async () => {
+        it("should set value of startTime to the time of contract deployment", async () => {
             // TODO: Convert timestamp to DD/MM/YYYY, HH:MM and then compare both
             // let blockTime = await contractInstance.startTime();
             console.log(Date.now());
