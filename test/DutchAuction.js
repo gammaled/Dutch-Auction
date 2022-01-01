@@ -7,7 +7,6 @@ const utils = require("./helpers/utils");
 
 // Testing smart contract
 contract("DutchAuction", (accounts) => {
-    let contractInstance;
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
     let asset;
@@ -19,7 +18,7 @@ contract("DutchAuction", (accounts) => {
     let startTime;
     beforeEach(async () => {
         // Creating new contract instance before every individual test
-        contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
+        let contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("constructor", async () => {
         it("should have the owner as the address that initialised it", async () => {
