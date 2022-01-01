@@ -25,8 +25,8 @@ contract("DutchAuction", (accounts) => {
         it("should have the owner as the address that initialised it", async () => {
             // TODO: Check why it passes without being implemented in smart contract
             let result = await contractInstance.owner();
-            expect(result).to.be.a("address");
             expect(result).to.equal(contractInstance.seller());
+            done();
         })
         xit("should define startTime variable with the value of the timestamp of contract deployment", async () => {
             // TODO: Fix logic to check if (NOW <= blockTime <= NOW + 15 sec)
