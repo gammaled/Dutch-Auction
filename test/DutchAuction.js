@@ -23,7 +23,7 @@ contract("DutchAuction", (accounts) => {
     });
     context("constructor", async () => {
         it("should have the owner as the address that initialised it", async () => {
-            // TODO: Check why test emits "OwnershipTransfer" event
+            // TODO: Check why it passes without being implemented in smart contract
             let result = await contractInstance.owner();
             expect(result).to.equal(seller);
         })
@@ -41,7 +41,7 @@ contract("DutchAuction", (accounts) => {
             // TODO: Test endTime > startTime
         })
     })
-    context("has a function bid() that", async () => {
+    xcontext("has a function bid() that", async () => {
         it("should only work if there has been no bid made", async () => {
             //TODO: Test that the value of bidder variable is a address(0) (zero address)
         })
