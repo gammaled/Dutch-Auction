@@ -45,6 +45,8 @@ contract("DutchAuction", (accounts) => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
             let result = 1;
             // Checks if endTime is neither undefined nor null
+            let checkValue = result == !(undefined || null);
+            console.log(checkValue);
         })
     })
     xcontext("bid() function", async () => {
