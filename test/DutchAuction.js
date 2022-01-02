@@ -33,7 +33,7 @@ contract("DutchAuction", (accounts) => {
 
             expect(timeCheck).to.equal(true);
         })
-        it("should have an assertion that checks if startPrice greater than reservePrice", async () => {
+        xit("should have an assertion that checks if startPrice greater than reservePrice", async () => {
             // Assertion should leave startPrice and reservePrice undefined if the statement above is not true
             let result = await contractInstance.startPrice();
             // Checks if startPrice is neither undefined nor null
@@ -41,12 +41,13 @@ contract("DutchAuction", (accounts) => {
             console.log(checkValue);
             expect(checkValue).to.equal(true);
         })
-        xit("should have an assertion that checks if endTime is greater than startTime", async () => {
+        it("should have an assertion that checks if endTime is greater than startTime", async () => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
-            let result = 1;
+            let result = await contractInstance.endTime();
             // Checks if endTime is neither undefined nor null
             let checkValue = result == !(undefined || null);
             console.log(checkValue);
+            expect(checkValue).to.equal(true);
         })
     })
     xcontext("bid() function", async () => {
