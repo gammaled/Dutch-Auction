@@ -29,8 +29,12 @@ contract("DutchAuction", (accounts) => {
         it("should set value of startTime to the time of contract deployment", async () => {
             // TODO: Convert timestamp to DD/MM/YYYY, HH:MM and then compare both
             //let blockTime = await contractInstance.startTime();
+            let blockTime = (Date.now() / 1000) - 15;
             let currentTime = Date.now() / 1000;
-            console.log(currentTime);
+            let timeCheck = (blockTime >= currentTime - 15 && blockTime <= currentTime + 15);
+
+            console.log("Current time:", currentTime);
+            console.log("Block time range:", timeCheck);
             // expect(blockTime).to.equal(Date.now());
         })
         xit("should return error if startPrice is not greater than reservePrice", async () => {
