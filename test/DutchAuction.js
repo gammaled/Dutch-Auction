@@ -41,8 +41,10 @@ contract("DutchAuction", (accounts) => {
             console.log(checkValue);
             expect(checkValue).to.equal(true);
         })
-        xit("should return error if endTime is not greater than startTime", async () => {
-            // TODO: Test endTime > startTime
+        xit("should have an assertion that checks if endTime is greater than startTime", async () => {
+            // Assertion should leave endTime and startTime undefined if the statement above is not true
+            let result = 1;
+            // Checks if endTime is neither undefined nor null
         })
     })
     xcontext("bid() function", async () => {
