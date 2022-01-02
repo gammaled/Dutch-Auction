@@ -33,7 +33,7 @@ contract("DutchAuction", (accounts) => {
 
             expect(timeCheck).to.equal(true);
         })
-        it("should have an assertion that check if startPrice greater than reservePrice", async () => {
+        it("should have an assertion that checks if startPrice greater than reservePrice", async () => {
             // TODO: Test if startPrice > reservePrice
         })
         xit("should return error if endTime is not greater than startTime", async () => {
