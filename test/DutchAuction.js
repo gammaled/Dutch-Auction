@@ -22,7 +22,7 @@ contract("DutchAuction", (accounts) => {
         contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("DutchAuction constructor", async () => {
-        xit("should have the owner as the address that initialised it", async () => {
+        it("should have the owner as the address that initialised it", async () => {
             let result = await contractInstance.owner();
             expect(result).to.equal(contractInstance.seller());
         })
@@ -49,17 +49,19 @@ contract("DutchAuction", (accounts) => {
             expect(checkValue).to.equal(true);
         })
     })
-    xcontext("bid() function", async () => {
+    context("bid() function", async () => {
         it("should only work if there has been no bid made", async () => {
-            //TODO: Test that the value of bidder variable is a address(0) (zero address)
+            //TODO: Test that the value of bidder variable is a zero address (0x0000000000000000000000000000000000000000)
+            console.log(await contractInstance.OwnershipTransferred());
+            console.log(await contractInstance.OwnershipTransferred()._maxListeners == !undefined);
         })
-        it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
+        xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
         })
-        it("should have a currentPrice is equal to or less than startPrice", async () => {
+        xit("should have a currentPrice is equal to or less than startPrice", async () => {
             //TODO: Test that ownership transfer to msg.sender(bidder) works
         })
-        it("should transfer ownership from seller to bidder", async () => {
+        xit("should transfer ownership from seller to bidder", async () => {
             //TODO: Test that bidder is new owner
         })
     })
