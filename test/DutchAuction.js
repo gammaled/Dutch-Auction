@@ -28,6 +28,7 @@ contract("DutchAuction", (accounts) => {
         })
         xit("should set value of startTime to the time of contract deployment", async () => {
             let blockTime = await contractInstance.startTime();
+            // Converts the returned timestamp from milliseconds --> seconds
             let currentTime = Date.now() / 1000;
             let timeCheck = (blockTime >= currentTime - 15 && blockTime <= currentTime + 15);
 
@@ -38,15 +39,13 @@ contract("DutchAuction", (accounts) => {
             let result = await contractInstance.startPrice();
             // Checks if startPrice is neither undefined nor null
             let checkValue = result == !(undefined || null);
-            console.log(checkValue);
             expect(checkValue).to.equal(true);
         })
-        it("should have an assertion that checks if endTime is greater than startTime", async () => {
+        xit("should have an assertion that checks if endTime is greater than startTime", async () => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
             let result = await contractInstance.endTime();
             // Checks if endTime is neither undefined nor null
             let checkValue = result == !(undefined || null);
-            console.log(checkValue);
             expect(checkValue).to.equal(true);
         })
     })
