@@ -22,7 +22,7 @@ contract("DutchAuction", (accounts) => {
         contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("DutchAuction constructor", async () => {
-        it("should have the owner as the address that initialised it", async () => {
+        xit("should have the owner as the address that initialised it", async () => {
             let result = await contractInstance.owner();
             expect(result).to.equal(contractInstance.seller());
         })
@@ -52,8 +52,7 @@ contract("DutchAuction", (accounts) => {
     context("bid() function", async () => {
         it("should only work if there has been no bid made", async () => {
             //TODO: Test that the value of bidder variable is a zero address (0x0000000000000000000000000000000000000000)
-            console.log(await contractInstance.OwnershipTransferred());
-            console.log(await contractInstance.OwnershipTransferred()._maxListeners == !undefined);
+            console.log(seller, bidder);
         })
         xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
