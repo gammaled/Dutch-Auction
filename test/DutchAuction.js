@@ -52,7 +52,7 @@ contract("DutchAuction", (accounts) => {
     context("bid() function", async () => {
         it("should only work if there has been no bid made", async () => {
             //TODO: Test that the value of bidder variable is a zero address (0x0000000000000000000000000000000000000000)
-            console.log(seller, bidder);
+            console.log("Seller:", seller, "Bidder:", bidder);
         })
         xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
