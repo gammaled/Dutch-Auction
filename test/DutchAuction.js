@@ -55,6 +55,7 @@ contract("DutchAuction", (accounts) => {
             let bidder = await contractInstance.bidder();
             let bidderCheck = (bidder == (undefined || null));
             let result = await contractInstance.bid();
+            expect(bidderCheck).to.equal(result == !true);
         })
         xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
