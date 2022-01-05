@@ -50,14 +50,14 @@ contract("DutchAuction", (accounts) => {
         })
     })
     context("bid() function", async () => {
-        xit("should only work if there has been no bid made", async () => {
-            // Bid() function will only be called if bidder variable is undefined and returns true in this case.
+        it("should only work if there has been no bid made", async () => {
+            // Bid() function will only be called if no bid has been made and returns true in this case.
             let bidder = await contractInstance.bidder();
-            let bidderCheck = (bidder == (undefined || null));
+            let noBidMade = (bidder == (undefined || null));
             let result = await contractInstance.bid();
-            expect(bidderCheck).to.equal(result == true);
+            expect(noBidMade).to.equal(result == true);
         })
-        it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
+        xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
 
         })
