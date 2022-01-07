@@ -52,16 +52,19 @@ contract("DutchAuction", (accounts) => {
     context("bid() function", async () => {
         it("should only work if there has been no bid made", async () => {
             // Bid() function will only be called if no bid has been made and returns true in this case.
-            let bidder = await contractInstance.bidder();
+            //let bidder = await contractInstance.bidder();
+            let bidder = 1;
             //let noBidMade = (bidder == (undefined || null));
             function ifBidMade(bidder) {
                 if (bidder == (undefined || null)) {
-                    return 'No bid made';
+                    return true;
                 } else {
-                    return 'Bid has already been made';
+                    return false;
                 }
             }
-            let result = await contractInstance.bid();
+            //let result = await contractInstance.bid();
+
+            console.log(ifBidMade(bidder));
             //expect(noBidMade).to.equal(result == true);
         })
         xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
