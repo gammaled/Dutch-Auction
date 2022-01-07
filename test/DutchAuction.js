@@ -55,7 +55,7 @@ contract("DutchAuction", (accounts) => {
             let bidder = await contractInstance.bidder();
             let result = await contractInstance.bid();
             // True is returned if there has been no previous bidder
-            function ifBidMade(bidder) {
+            function ifPreviousBidMade(bidder) {
                 if (bidder == (undefined || null)) {
                     return true;
                 } else {
@@ -63,7 +63,7 @@ contract("DutchAuction", (accounts) => {
                 }
             }
             // The result of the bid() function returns "true"
-            expect(ifBidMade(bidder)).to.equal(result);
+            expect(ifPreviousBidMade(bidder)).to.equal(result);
         })
         xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
