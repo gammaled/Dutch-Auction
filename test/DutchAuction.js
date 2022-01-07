@@ -70,10 +70,14 @@ contract("DutchAuction", (accounts) => {
 
        // })
         xit("should have a currentPrice is equal to or less than startPrice", async () => {
-            //TODO: Test that ownership transfer to msg.sender(bidder) works
+            //TODO: Test assertions that check if (reservePrice < currentPrice < startPrice)
+            // Constructor should have an require() that reverts this is not TRUE
+            // If it is reverted, then these variables should be left undefined so this check would check for this.
+
         })
         xit("should transfer ownership from seller to bidder", async () => {
             //TODO: Test that bidder is new owner
+            // This test should check that owner == bidder, so ownership was transferred from seller --> bidder
         })
     })
 })
