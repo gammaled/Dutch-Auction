@@ -69,9 +69,7 @@ contract("DutchAuction", (accounts) => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
 
        // })
-        it("should have condition that asserts that reservePrice < startPrice", async () => {
-            //TODO: Test assertions that check if (reservePrice < currentPrice < startPrice)
-            // Constructor should have an require() that reverts this is not TRUE
+        xit("should have condition that asserts that reservePrice < startPrice", async () => {
             // If it is reverted, then these variables should be left undefined so this check would check for this.
             let startPrice = await contractInstance.startPrice();
             let reservePrice = await contractInstance.reservePrice();
@@ -86,8 +84,7 @@ contract("DutchAuction", (accounts) => {
             }
 
         })
-        xit("should transfer ownership from seller to bidder", async () => {
-            //TODO: Test that bidder is new owner
+        it("should transfer ownership from seller to bidder", async () => {
             // This test should check that owner == bidder, so ownership was transferred from seller --> bidder
         })
     })
