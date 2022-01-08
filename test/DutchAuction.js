@@ -65,7 +65,7 @@ contract("DutchAuction", (accounts) => {
             // The result of the bid() function returns "true"
             expect(ifPreviousBidMade(bidder)).to.equal(result);
         })
-        it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
+        xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
             let bidderBalance = parseInt(await web3.utils.fromWei(await web3.eth.getBalance(bidder)));
             if (bidderBalance === startPrice) {
@@ -90,9 +90,17 @@ contract("DutchAuction", (accounts) => {
             }
 
         })
-        xit("should transfer ownership from seller to bidder", async () => {
-            // This test should check that owner == bidder, so ownership was transferred from seller --> bidder 
-            
+        it("should transfer ownership from seller to bidder", async () => {
+            // This test should check that owner == bidder, so ownership was transferred from seller --> bidder
+            let bidMade = await contractInstance.bid();
+            let owner = await contractInstance.owner();
+            console.log(owner);
+
+            if(bidMade == true) {
+                expect(owner).to.equal(bidder);
+            } else {
+                expect(owner).to.equal(seller);
+            }
         })
     })
 })
