@@ -50,7 +50,7 @@ contract("DutchAuction", (accounts) => {
         })
     })
     context("bid() function", async () => {
-        it("should only work if there has been no bid made", async () => {
+        xit("should only work if there has been no bid made", async () => {
             // Bid() function will only be called if no bid has been made and returns true in this case.
             let bidder = await contractInstance.bidder();
             let result = await contractInstance.bid();
@@ -69,7 +69,7 @@ contract("DutchAuction", (accounts) => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
 
        // })
-        xit("should have a currentPrice is equal to or less than startPrice", async () => {
+        it("should have condition that asserts that reservePrice < currentPrice < startPrice", async () => {
             //TODO: Test assertions that check if (reservePrice < currentPrice < startPrice)
             // Constructor should have an require() that reverts this is not TRUE
             // If it is reverted, then these variables should be left undefined so this check would check for this.
