@@ -73,6 +73,8 @@ contract("DutchAuction", (accounts) => {
             //TODO: Test assertions that check if (reservePrice < currentPrice < startPrice)
             // Constructor should have an require() that reverts this is not TRUE
             // If it is reverted, then these variables should be left undefined so this check would check for this.
+            let startPrice = await contractInstance.startPrice();
+            let reservePrice = await contractInstance.reservePrice();
 
         })
         xit("should transfer ownership from seller to bidder", async () => {
