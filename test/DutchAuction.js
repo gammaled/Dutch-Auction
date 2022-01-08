@@ -85,7 +85,13 @@ contract("DutchAuction", (accounts) => {
 
         })
         it("should transfer ownership from seller to bidder", async () => {
-            // This test should check that owner == bidder, so ownership was transferred from seller --> bidder
+            // This test should check that owner == bidder, so ownership was transferred from seller --> bidder 
+            let bidderBalance = parseInt(await web3.utils.fromWei(await web3.eth.getBalance(bidder)));
+            if (bidderBalance === startPrice) {
+                expect(contractInstance.bid()).to.equal(true);
+            } else {
+                expect(contractInstance.bid()).to.equal(!true);
+            }
         })
     })
 })
