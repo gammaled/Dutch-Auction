@@ -1,7 +1,7 @@
 // Imports the DutchAuction contract for testing
 const DutchAuction = artifacts.require("DutchAuction");
 // Imports expect module from chai
-const { expect, should } = require("chai");
+const { expect } = require("chai");
 // Imports helper function to test fetching a promise 
 const utils = require("./helpers/utils");
 
