@@ -7,7 +7,7 @@ const utils = require("./helpers/utils");
 
 // Testing smart contract
 contract("DutchAuction", (accounts) => {
-    let contractInstance;
+
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
     let asset;
@@ -73,13 +73,18 @@ contract("DutchAuction", (accounts) => {
             //TODO: Test assertions that check if (reservePrice < currentPrice < startPrice)
             // Constructor should have an require() that reverts this is not TRUE
             // If it is reverted, then these variables should be left undefined so this check would check for this.
-            //let startPrice = await contractInstance.startPrice();
-            //let reservePrice = await contractInstance.reservePrice();
-
-            let startPrice = 1;
-            let reservePrice = 2;
+            let startPrice = await contractInstance.startPrice();
+            let reservePrice = await contractInstance.reservePrice();
 
             expect(startPrice && reservePrice).to.be.a("number");
+            expect(startPrice > reservePrice).to.equal(true);
+
+            if (startPrice > reservePrice) {
+                expect(contractInstance).to.equal(!undefined);
+            } else {
+                expect(contractInstance).to.equal(undefined);
+            }
+
         })
         xit("should transfer ownership from seller to bidder", async () => {
             //TODO: Test that bidder is new owner
