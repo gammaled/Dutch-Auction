@@ -23,8 +23,8 @@ contract("DutchAuction", (accounts) => {
     });
     context("DutchAuction constructor", async () => {
         xit("should have the owner as the address that initialised it", async () => {
-            let result = await contractInstance.owner();
-            expect(result).to.equal(contractInstance.seller());
+            let owner = await contractInstance.owner();
+            expect(owner).to.equal(contractInstance.seller());
         })
         xit("should set value of startTime to the time of contract deployment", async () => {
             let blockTime = await contractInstance.startTime();
