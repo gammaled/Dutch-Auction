@@ -22,11 +22,11 @@ contract("DutchAuction", (accounts) => {
         contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("DutchAuction constructor", async () => {
-        xit("should have the owner as the address that initialised it", async () => {
+        it("should have the owner as the address that initialised it", async () => {
             let owner = await contractInstance.owner();
             expect(owner).to.equal(contractInstance.seller());
         })
-        xit("should set value of startTime to the time of contract deployment", async () => {
+        it("should set value of startTime to the time of contract deployment", async () => {
             let blockTime = await contractInstance.startTime();
             // Converts the returned timestamp from milliseconds --> seconds
             let currentTime = Date.now() / 1000;
@@ -34,14 +34,14 @@ contract("DutchAuction", (accounts) => {
 
             expect(timeCheck).to.equal(true);
         })
-        xit("should have an assertion that checks if startPrice greater than reservePrice", async () => {
+        it("should have an assertion that checks if startPrice greater than reservePrice", async () => {
             // Assertion should leave startPrice and reservePrice undefined if the statement above is not true
             let result = await contractInstance.startPrice();
             // Checks if startPrice is neither undefined nor null
             let checkValue = result == !(undefined || null);
             expect(checkValue).to.equal(true);
         })
-        xit("should have an assertion that checks if endTime is greater than startTime", async () => {
+        it("should have an assertion that checks if endTime is greater than startTime", async () => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
             let result = await contractInstance.endTime();
             // Checks if endTime is neither undefined nor null
@@ -50,7 +50,7 @@ contract("DutchAuction", (accounts) => {
         })
     })
     context("bid() function", async () => {
-        xit("should only work if there has been no bid made", async () => {
+        it("should only work if there has been no bid made", async () => {
             // Bid() function will only be called if no bid has been made and returns true in this case.
             let bidder = await contractInstance.bidder();
             let result = await contractInstance.bid();
@@ -65,7 +65,7 @@ contract("DutchAuction", (accounts) => {
             // The result of the bid() function returns "true"
             expect(ifPreviousBidMade(bidder)).to.equal(result);
         })
-        xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
+        it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
             let bidderBalance = parseInt(await web3.utils.fromWei(await web3.eth.getBalance(bidder)));
             if (bidderBalance === startPrice) {
@@ -75,7 +75,7 @@ contract("DutchAuction", (accounts) => {
             }
 
         })
-        xit("should have condition that asserts that reservePrice < startPrice", async () => {
+        it("should have condition that asserts that reservePrice < startPrice", async () => {
             // If it is reverted, then these variables should be left undefined so this check would check for this.
             let startPrice = await contractInstance.startPrice();
             let reservePrice = await contractInstance.reservePrice();
