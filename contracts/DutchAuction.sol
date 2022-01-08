@@ -14,4 +14,17 @@ contract DutchAuction is Ownable {
     uint public reservePrice;
     uint public startTime;
     uint public endTime;
+
+    constructor(
+        address _assetContract,
+        uint _tokeId,
+        address _seller,
+        address _bidder,
+        uint startPrice,
+        uint reservePrice,
+        uint startTime,
+        uint endTime
+    ) public {
+        
+    }
 }
