@@ -1,7 +1,7 @@
 // Imports the DutchAuction contract for testing
 const DutchAuction = artifacts.require("DutchAuction");
 // Imports expect module from chai
-const { expect } = require("chai");
+const { expect, should } = require("chai");
 // Imports helper function to test fetching a promise 
 const utils = require("./helpers/utils");
 
@@ -69,12 +69,13 @@ contract("DutchAuction", (accounts) => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
 
        // })
-        it("should have condition that asserts that reservePrice < currentPrice < startPrice", async () => {
+        it("should have condition that asserts that reservePrice < startPrice", async () => {
             //TODO: Test assertions that check if (reservePrice < currentPrice < startPrice)
             // Constructor should have an require() that reverts this is not TRUE
             // If it is reverted, then these variables should be left undefined so this check would check for this.
             let startPrice = await contractInstance.startPrice();
             let reservePrice = await contractInstance.reservePrice();
+
 
         })
         xit("should transfer ownership from seller to bidder", async () => {
