@@ -65,10 +65,16 @@ contract("DutchAuction", (accounts) => {
             // The result of the bid() function returns "true"
             expect(ifPreviousBidMade(bidder)).to.equal(result);
         })
-        //xit("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
+        it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
+            let bidderBalance = parseInt(await web3.utils.fromWei(await web3.eth.getBalance(bidder)));
+            if (bidderBalance === startPrice) {
+                expect(contractInstance.bid()).to.equal(true);
+            } else {
+                expect(contractInstance.bid()).to.equal(!true);
+            }
 
-       // })
+        })
         xit("should have condition that asserts that reservePrice < startPrice", async () => {
             // If it is reverted, then these variables should be left undefined so this check would check for this.
             let startPrice = await contractInstance.startPrice();
@@ -84,14 +90,9 @@ contract("DutchAuction", (accounts) => {
             }
 
         })
-        it("should transfer ownership from seller to bidder", async () => {
+        xit("should transfer ownership from seller to bidder", async () => {
             // This test should check that owner == bidder, so ownership was transferred from seller --> bidder 
-            let bidderBalance = parseInt(await web3.utils.fromWei(await web3.eth.getBalance(bidder)));
-            if (bidderBalance === startPrice) {
-                expect(contractInstance.bid()).to.equal(true);
-            } else {
-                expect(contractInstance.bid()).to.equal(!true);
-            }
+            
         })
     })
 })
