@@ -18,13 +18,11 @@ contract DutchAuction is Ownable {
     constructor(
         address _assetContract,
         uint _tokenId,
-        address _seller,
-        address _bidder,
         uint _startPrice,
         uint _reservePrice,
         uint _endTime
     ) public {
         require(_startPrice > _reservePrice, "Start price MUST be higher than reserve price!");
-        
+        startTime = block.timestamp;
     }
 }
