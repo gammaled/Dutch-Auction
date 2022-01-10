@@ -17,7 +17,7 @@ contract DutchAuction is Ownable {
 
     constructor(
         address _assetContract,
-        uint _tokeId,
+        uint _tokenId,
         address _seller,
         address _bidder,
         uint startPrice,
