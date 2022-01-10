@@ -22,9 +22,9 @@ contract DutchAuction is Ownable {
         address _bidder,
         uint _startPrice,
         uint _reservePrice,
-        uint _startTime,
         uint _endTime
     ) public {
+        require(_startPrice > _reservePrice, "Start price MUST be higher than reserve price!");
         
     }
 }
