@@ -20,10 +20,10 @@ contract DutchAuction is Ownable {
         uint _tokenId,
         address _seller,
         address _bidder,
-        uint startPrice,
-        uint reservePrice,
-        uint startTime,
-        uint endTime
+        uint _startPrice,
+        uint _reservePrice,
+        uint _startTime,
+        uint _endTime
     ) public {
         
     }
