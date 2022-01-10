@@ -7,4 +7,9 @@ contract TestERCToken is ERC721 {
         _name = name_;
         _symbol = symbol_;
     }
+
+    function _safeMint(address to, uint256 tokenId) internal virtual {
+        _safeMint(to, tokenId, "");
+    }
+
 }
