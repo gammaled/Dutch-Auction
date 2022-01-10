@@ -1,8 +1,9 @@
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
-contract TestERCToken is ERC721 {
+contract TestERCToken is IERC721 {
 
     string private _name;
     string private _symbol;
@@ -12,8 +13,9 @@ contract TestERCToken is ERC721 {
         _symbol = symbol_;
     }
 
-    function _transferAsset(address to, uint256 tokenId) internal virtual {
-        _safeMint(to, tokenId, "");
-    }
-
+    function safeTransferFrom(
+        address from,
+        address to,
+        uint256 tokenId
+    ) external;
 }
