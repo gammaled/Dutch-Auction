@@ -15,8 +15,7 @@ contract("DutchAuction", (accounts) => {
     let startPrice;
     let reservePrice;
     let endTime;
-    // Variable defined when constructor is called
-    let startTime;
+
     beforeEach(async () => {
         // Creating new contract instance before every individual test
         contractInstance = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
