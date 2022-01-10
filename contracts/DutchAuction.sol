@@ -21,7 +21,7 @@ contract DutchAuction is Ownable {
         uint _startPrice,
         uint _reservePrice,
         uint _endTime
-    ) public {
+    ) {
         require(_startPrice > _reservePrice, "Start price MUST be higher than reserve price!");
         startTime = block.timestamp;
         require(endTime > startTime, "The date of the end of auction MUST come after the start of the auction!");
