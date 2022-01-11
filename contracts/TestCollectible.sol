@@ -5,11 +5,11 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract TestCollectible is ERC721 {
     uint256 public tokenCounter;
-    constructor() public ERC721 ("Test","TST") {
+    constructor() ERC721 ("Test","TST") {
         tokenCounter = 0;
     }
 
-    function createCollectible() public return(uint256) {
+    function createCollectible() public returns (uint256) {
         uint256 newItemId = tokenCounter;
         _safeMint(msg.sender, newItemId);
         tokenCounter = tokenCounter + 1;
