@@ -13,7 +13,6 @@ contract("DutchAuction", (accounts) => {
 
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
-    let asset;
     let tokenId;
     let startPrice;
     let reservePrice;
