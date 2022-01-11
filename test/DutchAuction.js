@@ -14,8 +14,8 @@ contract("DutchAuction", (accounts) => {
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
     let tokenId;
-    let startPrice = web3.utils.toWei("1");
-    let reservePrice = web3.utils.toWei("0.5");
+    let startPrice = web3.utils.toWei("0.01");
+    let reservePrice = web3.utils.toWei("0.005");
     let endTime = 16496845230;
 
     beforeEach(async () => {
