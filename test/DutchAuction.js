@@ -10,7 +10,6 @@ const utils = require("./helpers/utils");
 contract("DutchAuction", (accounts) => {
 
     let dutchAuction;
-    let testCollectible;
 
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
@@ -22,7 +21,10 @@ contract("DutchAuction", (accounts) => {
 
     beforeEach(async () => {
         // Creating new contract instance before every individual test
-        testCollectible = await TestCollectible.new();
+        //Sort out the two variables below
+        let testCollectible = await TestCollectible.new();
+        let collectibleAddress = testCollectible.address;
+        tokenId = 1;
         dutchAuction = await DutchAuction.new(asset, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("DutchAuction constructor", async () => {
