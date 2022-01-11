@@ -14,8 +14,8 @@ contract("DutchAuction", (accounts) => {
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
     let tokenId;
-    let startPrice = 1;
-    let reservePrice = 0.5;
+    let startPrice = web3.utils.toWei("1");
+    let reservePrice = web3.utils.toWei("0.5");
     let endTime = 16496845230;
 
     beforeEach(async () => {
@@ -24,6 +24,7 @@ contract("DutchAuction", (accounts) => {
         let testCollectible = await TestCollectible.new();
         let collectibleAddress = testCollectible.address;
         tokenId = 1;
+        console.log(collectibleAddress);
         dutchAuction = await DutchAuction.new(collectibleAddress, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("DutchAuction constructor", async () => {
