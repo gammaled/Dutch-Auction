@@ -14,9 +14,9 @@ contract("DutchAuction", (accounts) => {
     // Variables used as parameters for constructor function
     let [seller, bidder] = accounts;
     let tokenId;
-    let startPrice;
-    let reservePrice;
-    let endTime;
+    let startPrice = 1;
+    let reservePrice = 0.5;
+    let endTime = 16496845230;
 
     beforeEach(async () => {
         // Creating new contract instance before every individual test
