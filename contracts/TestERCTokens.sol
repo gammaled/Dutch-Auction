@@ -9,9 +9,11 @@ contract TestERCToken is ERC721 {
         tokenCounter = 0;
     }
 
-    function safeTransferFrom(
-        address from,
-        address to,
-        uint256 tokenId
-    ) external;
+    function createCollectible(string memory tokenURI) public return(uint256) {
+        uint256 newItemId = tokenCounter;
+        _safeMint(msg.sender, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+        tokenCounter = tokenCounter + 1;
+        return newItemId;
+    }
 }
