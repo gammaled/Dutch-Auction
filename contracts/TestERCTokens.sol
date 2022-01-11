@@ -5,9 +5,6 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract TestERCToken is ERC721 {
 
-    string private _name;
-    string private _symbol;
-
     constructor() public ERC721 ("Test","TST") {
         _name = name_;
         _symbol = symbol_;
