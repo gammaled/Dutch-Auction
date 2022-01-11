@@ -8,7 +8,7 @@ contract TestERCToken is ERC721 {
     string private _name;
     string private _symbol;
 
-    constructor(string memory name_, string memory symbol_) {
+    constructor() public ERC721 ("Test","TST") {
         _name = name_;
         _symbol = symbol_;
     }
