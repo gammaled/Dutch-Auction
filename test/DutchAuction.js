@@ -44,12 +44,8 @@ contract("DutchAuction", (accounts) => {
             let startPriceResult = await dutchAuction.startPrice();
             let reservePriceResult = await dutchAuction.reservePrice();
             if (startPrice > reservePrice) {
-                expect(startPriceResult && reservePriceResult).to.equal(!undefined);
-            } else if (startPrice <= reservePrice) {
-                expect(startPriceResult && reservePriceResult).to.equal(undefined);
-            } else {
-                return "Something went wrong!";
-            }
+                return expect(startPriceResult && reservePriceResult).to.equal(!undefined);
+            };
         })
         it("should have an assertion that checks if endTime is greater than startTime", async () => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
