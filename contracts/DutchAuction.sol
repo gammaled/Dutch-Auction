@@ -35,5 +35,6 @@ contract DutchAuction is Ownable {
         require(msg.sender.balance >= startPrice, "Sorry, you do not have the REQUIRED capital to participate!");
         require(bidder == address(0), "Sorry, this auction has ended!");
         uint currentTime = block.timestamp;
+        uint timeDifference = startTime - currentTime;
     }
 }
