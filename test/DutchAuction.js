@@ -88,11 +88,7 @@ contract("DutchAuction", (accounts) => {
             let owner = await dutchAuction.owner();
             console.log(owner);
 
-            if(bidMade == true) {
-                expect(owner).to.equal(bidder);
-            } else {
-                expect(owner).to.equal(seller);
-            }
+            expect(owner).to.equal(bidder);
         })
     })
 })
