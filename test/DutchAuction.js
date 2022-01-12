@@ -73,8 +73,6 @@ contract("DutchAuction", (accounts) => {
             // If it is reverted, then these variables should be left undefined so this check would check for this.
             let startPrice = await dutchAuction.startPrice();
             let reservePrice = await dutchAuction.reservePrice();
-
-            expect(startPrice && reservePrice).to.be.a("number");
             expect(startPrice > reservePrice).to.equal(true);
 
             if (startPrice > reservePrice) {
