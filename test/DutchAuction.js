@@ -24,7 +24,6 @@ contract("DutchAuction", (accounts) => {
         let testCollectible = await TestCollectible.new();
         let collectibleAddress = testCollectible.address;
         tokenId = 1;
-        console.log(collectibleAddress);
         dutchAuction = await DutchAuction.new(collectibleAddress, tokenId, startPrice, reservePrice, endTime, {from: seller});
     });
     context("DutchAuction constructor", async () => {
