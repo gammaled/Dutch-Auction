@@ -16,7 +16,7 @@ contract("DutchAuction", (accounts) => {
     let tokenId;
     let startPrice = web3.utils.toWei("0.01");
     let reservePrice = web3.utils.toWei("0.005");
-    let endTime = 16496845230;
+    let endTime = 1649755731;
 
     beforeEach(async () => {
         // Creating new contract instance before every individual test
