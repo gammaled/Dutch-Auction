@@ -43,8 +43,11 @@ contract("DutchAuction", (accounts) => {
             // Assertion should leave startPrice and reservePrice undefined if the statement above is not true
             let result = await dutchAuction.startPrice();
             // Checks if startPrice is neither undefined nor null
-            let checkValue = result == !(undefined || null);
-            expect(checkValue).to.equal(true);
+            //let checkValue = result == !(undefined || null);
+            //expect(checkValue).to.equal(true);
+            if (startPrice > reservePrice) {
+                expect(startPrice && reservePrice).to.equal(!undefined);
+            }
         })
         it("should have an assertion that checks if endTime is greater than startTime", async () => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
