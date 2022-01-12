@@ -47,7 +47,7 @@ contract("DutchAuction", (accounts) => {
             //let checkValue = result == !(undefined || null);
             //expect(checkValue).to.equal(true);
             if (startPrice > reservePrice) {
-                expect(startPrice && reservePrice).to.equal(!undefined);
+                expect(startPriceResult && reservePriceResult).to.equal(!undefined);
             }
         })
         it("should have an assertion that checks if endTime is greater than startTime", async () => {
