@@ -60,18 +60,8 @@ contract("DutchAuction", (accounts) => {
     context("bid() function", async () => {
         it("should only work if there has been no bid made", async () => {
             // Bid() function will only be called if no bid has been made and returns true in this case.
-            let bidder = await dutchAuction.bidder();
-            let result = await dutchAuction.bid();
-            // True is returned if there has been no previous bidder
-            function ifPreviousBidMade(bidder) {
-                if (bidder == (undefined || null)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            // The result of the bid() function returns "true"
-            expect(ifPreviousBidMade(bidder)).to.equal(result);
+            let bidderResult = await dutchAuction.bidder();
+            expect(bidderResult).to.equal('0x0000000000000000000000000000000000000000');
         })
         it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
