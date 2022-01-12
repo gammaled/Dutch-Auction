@@ -76,7 +76,7 @@ contract("DutchAuction", (accounts) => {
         it("should only allow a caller (bidder) that has the startPrice in their wallet", async () => {
             //TODO: Test to check balance of msg.sender (bidder) has the required capital to enter bid
             let bidderBalance = parseInt(await web3.utils.fromWei(await web3.eth.getBalance(bidder)));
-            if (bidderBalance === startPrice) {
+            if (bidderBalance >= startPrice) {
                 expect(dutchAuction.bid()).to.equal(true);
             } else {
                 expect(dutchAuction.bid()).to.equal(!true);
