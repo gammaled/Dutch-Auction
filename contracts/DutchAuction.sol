@@ -30,4 +30,8 @@ contract DutchAuction is Ownable {
         startPrice = _startPrice;
         endTime = _endTime;
     }
+
+    function bid() payable public returns(bool) {
+
+    }
 }
