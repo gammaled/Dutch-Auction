@@ -17,6 +17,7 @@ contract("DutchAuction", (accounts) => {
     let startPrice = web3.utils.toWei("0.01");
     let reservePrice = web3.utils.toWei("0.005");
     let endTime = 1649755731;
+    let currentTime = Date.now() / 1000;
 
     beforeEach(async () => {
         // Creating new contract instance before every individual test
@@ -34,7 +35,6 @@ contract("DutchAuction", (accounts) => {
         it("should set value of startTime dutchAuction the time of contract deployment", async () => {
             let blockTime = await dutchAuction.startTime();
             // Converts the returned timestamp from milliseconds --> seconds
-            let currentTime = Date.now() / 1000;
             let timeCheck = (blockTime >= currentTime - 15 && blockTime <= currentTime + 15);
 
             expect(timeCheck).to.equal(true);
@@ -51,10 +51,10 @@ contract("DutchAuction", (accounts) => {
         it("should have an assertion that checks if endTime is greater than startTime", async () => {
             // Assertion should leave endTime and startTime undefined if the statement above is not true
             let endTimeResult = await dutchAuction.endTime();
-            let startTimeResult = await dutchAuction.startTime();
             // Checks if endTime is neither undefined nor null
-            let checkValue = result == !(undefined || null);
-            expect(checkValue).to.equal(true);
+            if (endTime > currentTime) {
+                return expect(endTimeResult && currentTime).to.equal(!undefined);
+            };
         })
     })
     context("bid() function", async () => {
