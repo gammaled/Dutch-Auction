@@ -32,6 +32,6 @@ contract DutchAuction is Ownable {
     }
 
     function bid() payable public returns(bool) {
-
+        uint memory currentTime = block.timestamp;
     }
 }
