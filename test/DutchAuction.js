@@ -77,6 +77,7 @@ contract("DutchAuction", (accounts) => {
         })
         it("should transfer ownership from seller to bidder", async () => {
             // This test should check that owner == bidder, so ownership was transferred from seller --> bidder
+            await dutchAuction.bid({from: bidder});
             let owner = await dutchAuction.owner();
             expect(owner).to.equal(bidder);
         })
