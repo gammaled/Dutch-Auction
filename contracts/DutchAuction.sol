@@ -8,7 +8,7 @@ contract DutchAuction is Ownable {
 
     address public assetContract;
     uint public tokenId;
-    address public seller;
+    address payable public seller;
     address public bidder;
     uint public startPrice;
     uint public reservePrice;
