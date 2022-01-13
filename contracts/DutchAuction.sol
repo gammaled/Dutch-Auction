@@ -31,7 +31,7 @@ contract DutchAuction is Ownable {
         endTime = _endTime;
     }
 
-    function bid() payable public returns(bool) {
+    function bid() payable public {
         require(msg.sender.balance >= startPrice, "Sorry, you do not have the REQUIRED capital to participate!");
         require(bidder == address(0), "Sorry, this auction has ended!");
         uint currentTime = block.timestamp;
