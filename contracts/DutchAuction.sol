@@ -38,4 +38,5 @@ contract DutchAuction is Ownable {
         uint pricePerSecond = (startPrice - reservePrice)/(endTime - startTime);
         uint timeElapsed = startTime - block.timestamp;
         uint currentPrice = startPrice - (timeElapsed * pricePerSecond);
+    }
 }
