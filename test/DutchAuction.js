@@ -26,6 +26,7 @@ contract("DutchAuction", (accounts) => {
         let collectibleAddress = testCollectible.address;
         tokenId = 1;
         dutchAuction = await DutchAuction.new(collectibleAddress, tokenId, startPrice, reservePrice, endTime, {from: seller});
+        await testCollectible.approve(dutchAuction.address, tokenId, {from: seller});
     });
     context("DutchAuction constructor", async () => {
         it("should have the owner as the address that initialised it", async () => {
