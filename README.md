@@ -1,6 +1,6 @@
 # Dutch Auction
 
-## Project Goal
+## Project Summary
 ---
 
 * To write a smart contract that performs a dutch auction of digital assets, which in the case of this project will be NFTs (non-fungible tokens) which are tokens in the [ERC-721 standard](https://eips.ethereum.org/EIPS/eip-721).
