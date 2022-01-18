@@ -18,7 +18,7 @@
     * Token ID
     * End date
     * Start price
-    * Reserve pricess
+    * Reserve prices
 
 ## Technologies Used
 ---
