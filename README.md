@@ -12,7 +12,8 @@
 
 * The smart contract should be covered by unit tests to ensure that it works as intended before deployment to the Rinkeby Ethereum testnet. I will not be deploying it to mainnet as gas fees are high and this is project is mostly for educational purposes.
 * It will be initiated with:
-    * Start date
+    * ERC721 contract address
+    * Token ID
     * End date
     * Start price
     * Reserve price
