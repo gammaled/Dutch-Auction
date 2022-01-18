@@ -31,9 +31,8 @@
 
 ## Testing
 ---
-* I am unit testing the smart contract with Mocha during development before deployment to Rinkeby testnet and eventually Ethereum mainnet.
-
 ### Unit Tests
+I am unit testing the smart contract with Mocha during development before deployment to Rinkeby testnet and eventually Ethereum mainnet.
 * **Owner of the dutch auction should be the seller that initialised it** <br>
 I tested this by calling ```owner()``` function and asserted that the returned address is equal to the address of the seller, the address putting that initiated the auction.
 * **The auction start time is equal to time of contract deployment**<br>
