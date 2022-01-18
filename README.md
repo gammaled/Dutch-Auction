@@ -47,7 +47,7 @@ I used a require statement that asserts this condition in constructor of the con
 I used a require statement that asserts this condition in constructor of the contract and deployment is reverted if it is not met. I asserted that the variables ```startPrice``` and ```reservePrice``` are only defined if the condition is met.
 
 * **Bid can only be made if no bid has been made previously**<br>
-I used a require statement that asserts in the ```bid()``` function that the address of ```bidder == address(0)``` (```0x0000000000000000000000000000000000000000```) which is the default address of undefined variable of type address. Only once this condition is met is the ```bidder``` variable defined with the address calling the ```bid()``` function.
+I used a require statement that asserts in the ```bid()``` function that the address of ```bidder == address(0)``` (```0x0000000000000000000000000000000000000000```) which is the default address of undefined variable of type ```address```. Only once this condition is met is the ```bidder``` variable defined with the address calling the ```bid()``` function.
 
 * **Bid can only be made from an address that has start price or more as a requirement to enter auction**<br>
 I used an assertion to check if the balance of the bidder is equal to or more than the start price which required capital needed to make a bid.
