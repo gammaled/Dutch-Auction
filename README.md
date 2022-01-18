@@ -26,7 +26,7 @@
 * [Node.js](https://nodejs.org/en/docs/): used for installing and managing packages.
 * [Truffle](https://github.com/trufflesuite): a smart contract development framework.
 * [Mocha](https://mochajs.org/): a JavaScript unit testing framework.
-* [Chai](https://github.com/chaijs/chai#:~:text=Chai%20is%20a%20BDD%20%2F%20TDD,with%20any%20javascript%20testing%20framework.): a TDD assertion library I paired with Mocha.
+* [Chai](https://github.com/chaijs/chai#:~:text=Chai%20is%20a%20BDD%20%2F%20TDD,with%20any%20javascript%20testing%20framework.): a TDD assertion library paired with Mocha.
 * [Ganache](https://github.com/trufflesuite/ganache): a tool for creating a local blockchain for fast Ethereum development.
 
 ## Testing
