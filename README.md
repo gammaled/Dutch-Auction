@@ -9,7 +9,7 @@
     * It is an auction where the auctioneer starts with a high asking price and it decreases until a participant accepts the price or it reaches a predetermined reserve price.<br>
 <br>
 
-* As soon as the bidder accepts the price, the asset should be immediately transferred to avoid a flash loan attack.<br>
+* As soon as the bidder accepts the price, the asset should be immediately transferred to avoid a flash loan attack.
 
 * The smart contract should be covered by unit tests to ensure that it works as intended before deployment to the Rinkeby Ethereum testnet. I will not be deploying it to mainnet as gas fees are high and this is project is mostly for educational purposes.
 
@@ -47,7 +47,7 @@ I used a require statement that asserts this condition in constructor of the con
 * **Contract deployment should revert if the following condition is not met: ```startPrice > reservePrice```**<br>
 I used a require statement that asserts this condition in constructor of the contract and deployment is reverted if it is not met. I asserted that the variables ```startPrice``` and ```reservePrice``` are only defined if the condition is met.
 
-* **Bid can only be made if not bid has been made previously**<br>
+* **Bid can only be made if no bid has been made previously**<br>
 I used a require statement that asserts in the ```bid()``` function that the address of ```bidder == address(0)``` (```0x0000000000000000000000000000000000000000```) which is the default address of undefined variable of type address. Only once this condition is met is the ```bidder``` variable defined with the address calling the ```bid()``` function.
 
 * **Bid can only be made from an address that has start price or more as a requirement to enter auction**<br>
