@@ -47,6 +47,7 @@ I used a require statement that asserts in the ```bid()``` function that the add
 I used an assertion to check if the balance of the bidder is equal to or more than the start price which required capital needed to make a bid.
 
 * **Ownership should be transferred to bidder after all conditions are met**<br>
+I have used an assertion to check that the address returned after calling ```owner()``` function is equal to the address of the bidder after the ```bid()``` function has been successfully called after meeting all conditions.
 
 
 ## Bugs
