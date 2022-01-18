@@ -24,7 +24,8 @@ contract("DutchAuction", (accounts) => {
         //Sort out the two variables below
         let testCollectible = await TestCollectible.new();
         let collectibleAddress = testCollectible.address;
-        tokenId = 1;
+        await testCollectible.createCollectible({from: seller});
+        tokenId = 0;
         dutchAuction = await DutchAuction.new(collectibleAddress, tokenId, startPrice, reservePrice, endTime, {from: seller});
         await testCollectible.approve(dutchAuction.address, tokenId, {from: seller});
     });
