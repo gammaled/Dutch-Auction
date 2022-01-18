@@ -7,7 +7,6 @@
 
     ### What is a dutch auction?
     * It is an auction where the auctioneer starts with a high asking price and it decreases until a participant accepts the price or it reaches a predetermined reserve price.<br>
-<br>
 
 * As soon as the bidder accepts the price, the asset should be immediately transferred to avoid a flash loan attack.
 
