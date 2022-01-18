@@ -34,6 +34,20 @@
 * I am unit testing the smart contract with Mocha during development before deployment to Rinkeby testnet and eventually Ethereum mainnet.
 
 ### Unit Tests
+* **Owner of the dutch auction should be the seller that initialised it** <br>
+I tested this by calling ```owner()``` function and asserted that the returned address is equal to the address of the seller, the address putting that initiated the auction.
+* **The auction start time is equal to time of contract deployment**<br>
+The ```startTime``` variable is initialised with ```block.timestamp``` at deployment and then asserted that it was equal to timestamp in test script using ```Date.now()```. This test was run while taking into account that it takes a while to confirm a block in the blockchain.
+* **Contract deployment should revert if the following condition is not met: ```startTime < endTime```**<br>
+I used a require statement that asserts this condition in constructor of the contract and deployment is reverted if it is not met. I asserted that the variables ```startTime``` and ```endTime``` are only defined if the condition is met.
+* **Contract deployment should revert if the following condition is not met: ```startPrice > reservePrice```**<br>
+I used a require statement that asserts this condition in constructor of the contract and deployment is reverted if it is not met. I asserted that the variables ```startPrice``` and ```reservePrice``` are only defined if the condition is met.
+* **Bid can only be made if not bid has been made previously**<br>
+I used a require statement that asserts in the ```bid()``` function that the address of ```bidder == address(0)``` (```0x0000000000000000000000000000000000000000```) which is the default address of undefined variable of type address. Only once this condition is met is the ```bidder``` variable defined with the address calling the ```bid()``` function.
+* **Bid can only be made from an address that has start price or more as a requirement to enter auction**<br>
+I used an assertion to check if the balance of the bidder is equal to or more than the start price which required capital needed to make a bid.
+
+* **Ownership should be transferred to bidder after all conditions are met**<br>
 
 
 ## Bugs
