@@ -70,12 +70,6 @@ contract("DutchAuction", (accounts) => {
             let balanceCheck = bidderBalance >= startPrice;
             expect(balanceCheck).to.equal(true);
         })
-        it("should have condition that asserts that reservePrice < startPrice", async () => {
-            // If it is reverted, then these variables should be left undefined so this check would check for this.
-            let startPrice = await dutchAuction.startPrice();
-            let reservePrice = await dutchAuction.reservePrice();
-            expect(startPrice > reservePrice).to.equal(true);
-        })
         it("should transfer ownership from seller to bidder", async () => {
             // This test should check that owner == bidder, so ownership was transferred from seller --> bidder
             await dutchAuction.bid({from: bidder});
