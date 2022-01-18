@@ -12,13 +12,13 @@
 * As soon as the bidder accepts the price, the asset should be immediately transferred to avoid a flash loan attack.<br>
 
 * The smart contract should be covered by unit tests to ensure that it works as intended before deployment to the Rinkeby Ethereum testnet. I will not be deploying it to mainnet as gas fees are high and this is project is mostly for educational purposes.
+
 * It will be initiated with:
     * ERC721 contract address
     * Token ID
     * End date
     * Start price
-    * Reserve price
-* 
+    * Reserve pricess
 
 ## Technologies Used
 ---
