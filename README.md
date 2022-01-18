@@ -31,7 +31,7 @@
 
 ## Testing
 ---
-* I am unit testing the smart contract with Mocha during development before deployment.
+* I am unit testing the smart contract with Mocha during development before deployment to Rinkeby testnet and eventually Ethereum mainnet.
 
 ### Tests
 
